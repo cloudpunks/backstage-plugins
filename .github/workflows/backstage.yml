@@ -62,7 +62,7 @@ jobs:
       - name: Run bump
         env:
           YARN_ENABLE_IMMUTABLE_INSTALLS: "false"
-        run: yarn backstage-cli versions:bump --release main
+        run: yarn backstage-cli versions:bump --release master
 
       - name: Create request
         id: request
