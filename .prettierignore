@@ -1,0 +1,16 @@
+dist
+dist-types
+
+coverage
+.vscode
+
+.github/
+.pre-commit-config.yaml
+.yarnrc.yml
+
+*.yml
+*.yaml
+
+CHANGELOG.md
+AGENTS.md
+README.md

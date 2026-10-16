@@ -1,0 +1,37 @@
+---
+# yaml-language-server: $schema=https://www.schemastore.org/pre-commit-config.json
+default_stages:
+  - pre-commit
+
+exclude: |
+  (?x)^(
+    dist/|
+    dist-types/|
+    node_modules/|
+    coverage/|
+    e2e-test-report/|
+    \.yarn/|
+    \.cache/|
+    .*/dist/|
+    .*/node_modules/
+  )
+
+repos:
+  - repo: https://github.com/alessandrojcm/commitlint-pre-commit-hook
+    rev: v9.26.0
+    hooks:
+      - id: commitlint
+        stages:
+          - commit-msg
+        additional_dependencies:
+          - "@commitlint/config-conventional"
+
+  - repo: local
+    hooks:
+      - id: prettier
+        name: prettier
+        entry: yarn prettier:check
+        language: system
+        pass_filenames: false
+
+...

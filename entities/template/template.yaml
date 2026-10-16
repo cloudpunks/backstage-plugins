@@ -1,0 +1,30 @@
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+metadata:
+  name: kubernetes-version
+  title: Kubernetes version picker
+  description: Try the KubernetesVersionPicker field
+spec:
+  owner: guest
+  type: example
+  parameters:
+    - title: Versions
+      properties:
+        kubernetes:
+          title: Kubernetes version
+          type: string
+          ui:field: KubernetesVersionPicker
+          ui:options:
+            distribution: kubernetes
+        k0s:
+          title: k0s version
+          type: string
+          ui:field: KubernetesVersionPicker
+          ui:options:
+            distribution: k0s
+  steps:
+    - id: log
+      name: Log
+      action: debug:log
+      input:
+        message: Kubernetes ${{ parameters.kubernetes }}, k0s ${{ parameters.k0s }}

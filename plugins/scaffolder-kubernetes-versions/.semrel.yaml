@@ -1,0 +1,29 @@
+---
+# yaml-language-server: $schema=https://registry.semrel.io/schemas/core/v1.json
+schemaVersion: 1
+
+branches:
+  - name: master
+
+rules:
+  - type: feat
+    bump: minor
+  - type: fix
+    bump: patch
+  - type: perf
+    bump: patch
+  - type: revert
+    bump: patch
+  - type: deps
+    bump: patch
+
+plugins:
+  - uses: "@semrel/provider-github"
+  - uses: "@semrel/generator-changelog-md"
+  - uses: "@semrel/updater-npm"
+  - uses: "@semrel/publisher-npm"
+    args:
+      provenance: "true"
+      access: "public"
+
+...

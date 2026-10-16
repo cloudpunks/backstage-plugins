@@ -1,0 +1,47 @@
+---
+# yaml-language-server: $schema=https://www.schemastore.org/app-config.json
+app:
+  title: Backstage Plugins
+  baseUrl: http://localhost:3000
+
+backend:
+  baseUrl: http://localhost:7007
+  listen:
+    port: 7007
+  database:
+    client: better-sqlite3
+    connection: ':memory:'
+  auth:
+    dangerouslyDisableDefaultAuthPolicy: true
+
+auth:
+  environment: development
+  providers:
+    guest: {}
+
+catalog:
+  rules:
+    - allow: [Component, System, API, Resource, Location, User, Group, Template]
+  locations:
+    - type: file
+      target: ../../entities/catalog.yaml
+
+kubernetes:
+  serviceLocatorMethod:
+    type: multiTenant
+  clusterLocatorMethods:
+    - type: config
+      clusters:
+        - name: mgmt
+          url: https://kubernetes.example.com
+          authProvider: serviceAccount
+          skipTLSVerify: true
+
+kubernetesVersions:
+  supportedMinors: 3
+
+kubeconfig:
+  managementCluster: mgmt
+  instructions: Download the kubeconfig or copy it to your clipboard.
+
+...

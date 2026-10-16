@@ -1,0 +1,93 @@
+---
+# yaml-language-server: $schema=https://www.schemastore.org/github-workflow.json
+name: backstage
+
+"on":
+  workflow_dispatch:
+  schedule:
+    - cron: "0 8 * * 4"
+
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  backstage:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Setup nodejs
+        uses: actions/setup-node@v7
+        with:
+          node-version: lts/*
+
+      - name: Generate token
+        id: token
+        uses: actions/create-github-app-token@v3
+        with:
+          client-id: ${{ secrets.TOKEN_EXCHANGE_APP }}
+          private-key: ${{ secrets.TOKEN_EXCHANGE_KEY }}
+          permission-contents: write
+          permission-pull-requests: write
+          permission-issues: write
+
+      - name: Checkout source
+        uses: actions/checkout@v7
+        with:
+          token: ${{ steps.token.outputs.token }}
+
+      - name: Install tools
+        uses: jdx/mise-action@v5
+
+      - name: Install deps
+        run: sudo apt-get update && sudo apt-get install -y build-essential
+
+      - name: Cache yarn
+        uses: actions/cache@v6
+        with:
+          key: ${{ runner.os }}-yarn-${{ hashFiles('yarn.lock') }}
+          path: |
+            ~/.yarn/berry/cache
+            .yarn/install-state.gz
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+
+      - name: Run install
+        run: yarn install --immutable
+
+      - name: Run bump
+        env:
+          YARN_ENABLE_IMMUTABLE_INSTALLS: "false"
+        run: yarn backstage-cli versions:bump --release main
+
+      - name: Create request
+        id: request
+        uses: peter-evans/create-pull-request@v8
+        with:
+          branch: update/backstage
+          delete-branch: true
+          add-paths: .
+          author: GitHub Actions <github@cloudpunks.de>
+          commit-message: "chore: automated backstage version updates"
+          signoff: true
+          title: "chore: automated backstage version updates"
+          body: "Bump backstage dependencies to currently latest release."
+          token: ${{ steps.token.outputs.token }}
+
+      - name: Approve request
+        if: steps.request.outputs.pull-request-operation == 'created'
+        run: gh pr review --approve "${{ steps.request.outputs.pull-request-number }}"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Enable automerge
+        if: steps.request.outputs.pull-request-operation == 'created'
+        run: gh pr merge --rebase --auto "${{ steps.request.outputs.pull-request-number }}"
+        env:
+          GH_TOKEN: ${{ steps.token.outputs.token }}
+
+...

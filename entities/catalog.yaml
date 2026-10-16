@@ -1,0 +1,16 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: example
+  description: Example cluster, shows the kubeconfig card
+spec:
+  type: kubernetes-cluster
+  owner: guest
+---
+apiVersion: backstage.io/v1alpha1
+kind: Location
+metadata:
+  name: example-template
+spec:
+  targets:
+    - ./template/template.yaml

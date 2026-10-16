@@ -1,0 +1,130 @@
+Package: cri-tools
+Version: 1.36.0-1.1
+Architecture: amd64
+Maintainer: Kubernetes Authors <dev@kubernetes.io>
+Installed-Size: 38922
+Filename: amd64/cri-tools_1.36.0-1.1_amd64.deb
+Size: 16327192
+MD5sum: e1280bd8ed7e33fe6a7fe020387acfea
+SHA1: c80dbc184eca8e896c080f2517819634ef16f5e7
+SHA256: 8cff9279de7767239e11bf9c21016579a4246e04e7da0c500c7a3f8491db986a
+Section: admin
+Priority: optional
+Homepage: https://kubernetes.io
+Description: Command-line utility for interacting with a container runtime
+ Command-line utility for interacting with a container runtime.
+
+Package: kubeadm
+Version: 1.36.2-2.1
+Architecture: amd64
+Maintainer: Kubernetes Authors <dev@kubernetes.io>
+Installed-Size: 71372
+Filename: amd64/kubeadm_1.36.2-2.1_amd64.deb
+Size: 12555712
+MD5sum: 24ca7731456d0818a49320806fc21b8e
+SHA1: d3aa8bf87ec23bbb96a581bc20a621e988e27ea2
+SHA256: f08a258812d5c0a3f4828b048576310432b3bedb7cea293f793c606f017a445a
+Section: admin
+Priority: optional
+Homepage: https://kubernetes.io
+Description: Command-line utility for administering a Kubernetes cluster
+ Command-line utility for administering a Kubernetes cluster.
+
+Package: kubeadm
+Version: 1.36.5-1.1
+Architecture: amd64
+Maintainer: Kubernetes Authors <dev@kubernetes.io>
+Installed-Size: 71412
+Filename: amd64/kubeadm_1.36.5-1.1_amd64.deb
+Size: 12577900
+MD5sum: 1bf7bd81802b8aa84ea634022d0128aa
+SHA1: 391e38847c77aecbcda86a6a639d53b4af524c6a
+SHA256: bbb6899335ca6890be4c007e10c66303f68281d342f2e7345db9c03cd5175da9
+Section: admin
+Priority: optional
+Homepage: https://kubernetes.io
+Description: Command-line utility for administering a Kubernetes cluster
+ Command-line utility for administering a Kubernetes cluster.
+
+Package: kubeadm
+Version: 1.36.5-1.1
+Architecture: arm64
+Maintainer: Kubernetes Authors <dev@kubernetes.io>
+Installed-Size: 66876
+Filename: arm64/kubeadm_1.36.5-1.1_arm64.deb
+Size: 10712972
+MD5sum: 1ef5992f218df26175e2f60b6a34cc03
+SHA1: d45d65e27118e34e56a3787816626e64d4174b74
+SHA256: d08b7af27b50d539d91d9c5af69f73feff0e59455fe74d478e0a009cc2bdf260
+Section: admin
+Priority: optional
+Homepage: https://kubernetes.io
+Description: Command-line utility for administering a Kubernetes cluster
+ Command-line utility for administering a Kubernetes cluster.
+
+Package: kubectl
+Version: 1.36.2-2.1
+Architecture: amd64
+Maintainer: Kubernetes Authors <dev@kubernetes.io>
+Installed-Size: 58203
+Filename: amd64/kubectl_1.36.2-2.1_amd64.deb
+Size: 11766248
+MD5sum: 8f4ff368ce3736979e003996a8f046d8
+SHA1: 7de7c01fad28634ecb5508000089d05ca719e259
+SHA256: e678e88e6e65fb49f54985994eacaa5555574f0ceb01772208f328037878b58c
+Section: admin
+Priority: optional
+Homepage: https://kubernetes.io
+Description: Command-line utility for interacting with a Kubernetes cluster
+ Command-line utility for interacting with a Kubernetes cluster.
+
+Package: kubectl
+Version: 1.36.5-1.1
+Architecture: amd64
+Maintainer: Kubernetes Authors <dev@kubernetes.io>
+Installed-Size: 58231
+Filename: amd64/kubectl_1.36.5-1.1_amd64.deb
+Size: 11781196
+MD5sum: 97d427c89fb38f92de8565df0eac3a0f
+SHA1: 6037960b845d7ffbaae2b100d04e38abe3b3d921
+SHA256: e633cdbcb535b0fdf8bd9aa643cfd0ad080889fddb6794d2af0bbaaf110e7956
+Section: admin
+Priority: optional
+Homepage: https://kubernetes.io
+Description: Command-line utility for interacting with a Kubernetes cluster
+ Command-line utility for interacting with a Kubernetes cluster.
+
+Package: kubelet
+Version: 1.36.2-2.1
+Architecture: amd64
+Maintainer: Kubernetes Authors <dev@kubernetes.io>
+Installed-Size: 58816
+Depends: iptables (>= 1.4.21),kubernetes-cni (>= 1.2.0),mount,util-linux,libc6
+Filename: amd64/kubelet_1.36.2-2.1_amd64.deb
+Size: 13384912
+MD5sum: e296dd6c5be9c5b6a7d97ba680d7e555
+SHA1: 6bc14095d67780d49b9fa12f3c5b292504bd9d33
+SHA256: e60c79fa93b6538d3bae79cb325beafe08bc084f8501fe16a3f203af598f6f50
+Section: net
+Priority: optional
+Homepage: https://kubernetes.io
+Description: Node agent for Kubernetes clusters
+ Node agent for Kubernetes clusters.
+
+Package: kubelet
+Version: 1.36.5-1.1
+Architecture: amd64
+Maintainer: Kubernetes Authors <dev@kubernetes.io>
+Installed-Size: 58856
+Depends: kubernetes-cni (>= 1.2.0),mount,util-linux,libc6
+Recommends: iptables (>= 1.8.4)
+Filename: amd64/kubelet_1.36.5-1.1_amd64.deb
+Size: 13407912
+MD5sum: c131a021502772c36d63e8045e0b31ab
+SHA1: 39cbbc77555fcd372f6140163ede913c133113d5
+SHA256: dd46254567ee60672c0737a4b5392fae7f3419a876ab6885c48178501ac2fd64
+Section: net
+Priority: optional
+Homepage: https://kubernetes.io
+Description: Node agent for Kubernetes clusters
+ Node agent for Kubernetes clusters.
