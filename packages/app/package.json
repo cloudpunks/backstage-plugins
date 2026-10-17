@@ -24,8 +24,8 @@
     "@backstage/ui": "^0.18.0",
     "@cloudpunks/backstage-plugin-catalog-kubeconfig-fetcher": "workspace:^",
     "@cloudpunks/backstage-plugin-scaffolder-kubernetes-versions": "workspace:^",
-    "react": "^18.0.2",
-    "react-dom": "^18.0.2",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
     "react-router-dom": "^6.30.2"
   },
   "devDependencies": {
