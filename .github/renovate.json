@@ -5,13 +5,15 @@
     ":preserveSemverRanges"
   ],
   "ignoreDeps": [
+    "express",
     "react-dom",
     "react-router",
     "react",
-    "@types/react-dom",
-    "@types/react",
     "@material-ui/core",
-    "@material-ui/icons"
+    "@material-ui/icons",
+    "@types/express",
+    "@types/react-dom",
+    "@types/react"
   ],
   "packageRules": [
     {
