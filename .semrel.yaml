@@ -16,6 +16,8 @@ rules:
     bump: patch
   - type: deps
     bump: patch
+  - type: ci
+    hidden: true
 
 plugins:
   - uses: "@semrel/provider-github"
@@ -25,5 +27,24 @@ plugins:
     args:
       provenance: "true"
       access: "public"
+
+workspace:
+  strategy: independent
+
+  sharedPaths:
+    - tsconfig.json
+
+  ignorePaths:
+    - "**/*.md"
+    - "**/*.test.ts"
+    - "**/*.test.tsx"
+
+  packages:
+    - path: plugins/catalog-kubeconfig-fetcher
+      tagPrefix: catalog-kubeconfig-fetcher-
+    - path: plugins/kubernetes-versions-backend
+      tagPrefix: kubernetes-versions-backend-
+    - path: plugins/scaffolder-kubernetes-versions
+      tagPrefix: scaffolder-kubernetes-versions-
 
 ...
