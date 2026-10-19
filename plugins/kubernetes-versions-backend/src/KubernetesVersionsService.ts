@@ -93,7 +93,7 @@ export class KubernetesVersionsService {
             });
             return missingStatus.includes(response.status)
               ? null
-              : newestPackageVersion(await response.text()) ?? null;
+              : (newestPackageVersion(await response.text()) ?? null);
           },
         ),
       })),
