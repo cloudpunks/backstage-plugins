@@ -16,8 +16,6 @@ rules:
     bump: patch
   - type: deps
     bump: patch
-  - type: ci
-    hidden: true
 
 plugins:
   - uses: "@semrel/provider-github"
