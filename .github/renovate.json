@@ -1,7 +1,24 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "github>cloudpunks/.github//renovate/preset"
+    "github>cloudpunks/.github//renovate/preset",
+    ":preserveSemverRanges"
   ],
-  "minimumReleaseAge": "3 days"
+  "ignoreDeps": [
+    "react-dom",
+    "react-router",
+    "react",
+    "@types/react-dom",
+    "@types/react",
+    "@material-ui/core",
+    "@material-ui/icons"
+  ],
+  "packageRules": [
+    {
+      "matchPackageNames": [
+        "@backstage/*"
+      ],
+      "enabled": false
+    }
+  ]
 }
