@@ -29,6 +29,6 @@
     "react-router-dom": "^7.0.0"
   },
   "devDependencies": {
-    "@types/react-dom": "*"
+    "@types/react-dom": "19.3.0"
   }
 }
