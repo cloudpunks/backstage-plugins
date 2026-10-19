@@ -47,6 +47,11 @@ jobs:
       - name: Run build
         run: yarn build:all
 
+      - name: Git config
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "github@cloudpunks.de"
+
       - name: Run release
         run: semrel workspace release
         env:
