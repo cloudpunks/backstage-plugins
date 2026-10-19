@@ -21,7 +21,11 @@ plugins:
   - uses: "@semrel/provider-github"
   - uses: "@semrel/generator-changelog-md"
   - uses: "@semrel/updater-npm"
+    phase: pre-tag
+    args:
+      update_lockfile: "false"
   - uses: "@semrel/publisher-npm"
+    phase: release
     args:
       provenance: "true"
       access: "public"
