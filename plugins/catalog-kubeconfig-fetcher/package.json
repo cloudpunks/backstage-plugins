@@ -1,6 +1,6 @@
 {
   "name": "@cloudpunks/backstage-plugin-catalog-kubeconfig-fetcher",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "Backstage entity card to download or copy the kubeconfig of a cluster",
   "license": "Apache-2.0",
   "main": "src/index.ts",

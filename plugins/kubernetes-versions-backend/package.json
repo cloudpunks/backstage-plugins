@@ -1,6 +1,6 @@
 {
   "name": "@cloudpunks/backstage-plugin-kubernetes-versions-backend",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "Backstage backend plugin listing the supported Kubernetes and k0s releases",
   "license": "Apache-2.0",
   "main": "src/index.ts",

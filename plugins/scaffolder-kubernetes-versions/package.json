@@ -1,6 +1,6 @@
 {
   "name": "@cloudpunks/backstage-plugin-scaffolder-kubernetes-versions",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "Backstage scaffolder field to pick a Kubernetes or k0s version",
   "license": "Apache-2.0",
   "main": "src/index.ts",
