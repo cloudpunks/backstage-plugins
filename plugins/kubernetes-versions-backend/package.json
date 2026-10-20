@@ -15,7 +15,7 @@
     "url": "git+https://github.com/cloudpunks/backstage-plugins.git",
     "directory": "plugins/kubernetes-versions-backend"
   },
-  "homepage": "https://github.com/cloudpunks/backstage-plugins/tree/main/plugins/kubernetes-versions-backend",
+  "homepage": "https://github.com/cloudpunks/backstage-plugins/tree/master/plugins/kubernetes-versions-backend",
   "bugs": "https://github.com/cloudpunks/backstage-plugins/issues",
   "keywords": [
     "backstage",

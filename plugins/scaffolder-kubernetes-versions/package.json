@@ -15,7 +15,7 @@
     "url": "git+https://github.com/cloudpunks/backstage-plugins.git",
     "directory": "plugins/scaffolder-kubernetes-versions"
   },
-  "homepage": "https://github.com/cloudpunks/backstage-plugins/tree/main/plugins/scaffolder-kubernetes-versions",
+  "homepage": "https://github.com/cloudpunks/backstage-plugins/tree/master/plugins/scaffolder-kubernetes-versions",
   "bugs": "https://github.com/cloudpunks/backstage-plugins/issues",
   "keywords": [
     "backstage",

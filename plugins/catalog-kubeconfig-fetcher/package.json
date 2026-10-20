@@ -15,7 +15,7 @@
     "url": "git+https://github.com/cloudpunks/backstage-plugins.git",
     "directory": "plugins/catalog-kubeconfig-fetcher"
   },
-  "homepage": "https://github.com/cloudpunks/backstage-plugins/tree/main/plugins/catalog-kubeconfig-fetcher",
+  "homepage": "https://github.com/cloudpunks/backstage-plugins/tree/master/plugins/catalog-kubeconfig-fetcher",
   "bugs": "https://github.com/cloudpunks/backstage-plugins/issues",
   "keywords": [
     "backstage",
