@@ -20,6 +20,8 @@ rules:
 plugins:
   - uses: "@semrel/provider-github"
   - uses: "@semrel/generator-changelog-md"
+    args:
+      keep_releases: "10"
   - uses: "@semrel/updater-npm"
     phase: pre-tag
     args:
