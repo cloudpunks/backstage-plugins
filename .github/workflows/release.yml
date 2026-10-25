@@ -12,18 +12,35 @@ concurrency:
   cancel-in-progress: false
 
 permissions:
-  contents: write
   id-token: write
+  contents: write
+  pull-requests: write
+  issues: write
+  packages: write
 
 jobs:
   release:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Setup nodejs
+        uses: actions/setup-node@v7
+        with:
+          node-version: lts/*
+
+      - name: Generate token
+        id: token
+        uses: actions/create-github-app-token@v3
+        with:
+          client-id: ${{ secrets.TOKEN_EXCHANGE_APP }}
+          private-key: ${{ secrets.TOKEN_EXCHANGE_KEY }}
+          permission-contents: write
+
       - name: Checkout source
         uses: actions/checkout@v7
         with:
           fetch-depth: 0
+          token: ${{ steps.token.outputs.token }}
 
       - name: Install tools
         uses: jdx/mise-action@v5
@@ -56,5 +73,8 @@ jobs:
         run: semrel workspace release
         env:
           SEMREL_PLUGIN_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Sync sources
+        run: git pull --autostash --rebase && git push
 
 ...
