@@ -38,6 +38,7 @@ workspace:
 
   sharedPaths:
     - tsconfig.json
+    - .semrel.yaml
 
   ignorePaths:
     - "**/*.md"
