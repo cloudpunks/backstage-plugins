@@ -2,7 +2,7 @@
 
 [tools]
 node = "26"
-prek = "0.5.11"
+prek = "0.5.12"
 yarn = "4.19.0"
 
 "github:SemRels/semrel" = "0.29.0"
